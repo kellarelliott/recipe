@@ -14,15 +14,15 @@ const App = () => {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
 
+  const getRecipes = async () => {
+    console.log('sup')
+  }
+
   useEffect(() => {
     getRecipes()
   }, [query]);
 
-  const getRecipes = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`)
-    const data = await response.json();
-    setRecipes(data.hits);
-  }
+
 
   const updateSearch = e => {
     setSearch(e.target.value);
@@ -31,6 +31,7 @@ const App = () => {
   const getSearch = e => {
     e.preventDefault();
     setQuery(search);
+    setSearch('');
   }
 
   return (
