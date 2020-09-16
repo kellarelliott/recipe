@@ -15,7 +15,9 @@ const App = () => {
   const [query, setQuery] = useState('')
 
   const getRecipes = async () => {
-    console.log('sup')
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`)
+    const data = await response.json();
+    setRecipes(data.hits);
   }
 
   useEffect(() => {
