@@ -15,7 +15,7 @@ const App = () => {
   const [query, setQuery] = useState('')
 
   const getRecipes = async () => {
-    const response = await fetch(`https://rocky-oasis-02000.herokuapp.com/https://api.edamam.com/search?q=${query}&app_id=9d735ce2&app_key=b8d37a3eff170faa544327f9d05fe3f5`)
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=9d735ce2&app_key=b8d37a3eff170faa544327f9d05fe3f5`)
     const data = await response.json();
     setRecipes(data.hits);
   }
