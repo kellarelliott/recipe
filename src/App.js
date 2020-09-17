@@ -7,15 +7,14 @@ import './App.css';
 
 const App = () => {
 
-  const API_KEY = process.env.REACT_APP_EDAMAM_API_KEY;
-  const APP_ID = process.env.REACT_APP_EDAMAM_APP_ID;
+
 
   const [recipes, setRecipes] = useState([])
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState('')
 
   const getRecipes = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`)
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_EDAMAM_APP_ID}&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}`)
     const data = await response.json();
     setRecipes(data.hits);
   }
