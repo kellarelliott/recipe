@@ -5,3 +5,23 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-form {
+  align-self: center;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
