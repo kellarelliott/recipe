@@ -7,13 +7,41 @@ html {
 }
 
 
-.App {
+.Search {
   display: flex;
-  flex-direction: column;
+
+}
+
+.food-basket{
+  padding-top: 5%;
+  max-height: 41%;
+  max-width: 41%;
+  align-self: center;
 }
 
 .search-form {
   align-self: center;
+  padding-top: 5px;
+  width: 35%;
+  display: flex;
+}
+
+.search-bar{
+  width: 85%;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 30px;
+}
+
+.search-button {
+  width: 13%;
+  height: 32px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0;
+  font-size: 10px;
 }
 
 .search-results {
@@ -24,4 +52,6 @@ html {
 }
 
 
-
+.none {
+  display: none;
+}
