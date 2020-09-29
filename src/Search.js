@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css'
 import Recipe from './Recipe';
 import history from './history';
-import { Link } from 'react-router-dom';
+import Masonry from 'react-masonry-css';
 
 const Search = ({ match }) => {
 
@@ -36,18 +36,21 @@ const Search = ({ match }) => {
     history.push(`/search/${search}`)
   }
 
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
+
   return (
     <div className='Search'>
-      <Link to='/'>
-        <button>Home</button>
-      </Link>
-      <form onSubmit={getSearch} className='search-form'>
-        <input className='search-bar' type='text' value={search} onChange={updateSearch} />
-        <button className='search-button' type='submit'>
-          Search
-          </button>
-      </form>
-      <div className='search-results'>
+
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
         {recipes.map(recipe => (
           <React.Fragment key={recipe.recipe_id}>
             <Recipe
@@ -57,7 +60,8 @@ const Search = ({ match }) => {
             />
           </React.Fragment>
         ))}
-      </div>
+      </Masonry>
+
     </div>
   )
 };

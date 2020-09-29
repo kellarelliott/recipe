@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div className='Home'>
-      <img src={require('./images/home.png')} className='food-basket' />
+
       <form onSubmit={getSearch} className='search-form' >
         <input className='search-bar' type='text' value={search} onChange={updateSearch} />
         <button className='search-button' type='submit'>

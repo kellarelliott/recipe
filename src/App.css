@@ -7,23 +7,27 @@ html {
 }
 
 
-.Search {
+.App {
   display: flex;
+  justify-content: center;
+}
+
+.Home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
 
 }
 
-.food-basket{
-  padding-top: 5%;
-  max-height: 41%;
-  max-width: 41%;
-  align-self: center;
+.Search {
+  width: 95%;
 }
 
 .search-form {
   align-self: center;
   padding-top: 5px;
   width: 35%;
-  display: flex;
 }
 
 .search-bar{
@@ -44,11 +48,41 @@ html {
   font-size: 10px;
 }
 
-.search-results {
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  margin-left: -10px; /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 10px;
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  background: white;
+  margin-bottom: 10px;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.view-button {
+  border-radius: 15px;
+  background-color: white;
+  border: 2px solid grey;
+
+}
+
+.view-button:hover {
+  cursor: pointer;
 }
 
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './recipe.module.css'
+import './App.css';
 import { Link } from 'react-router-dom';
 
 
@@ -9,12 +9,12 @@ const Recipe = ({ label, image, id }) => {
 
   return (
 
-    <div className={style.recipe}>
+    <div className='recipe'>
+      <img className='img' src={image} alt="" />
+      <p>{label}</p>
       <Link to={`/${id}`}>
-        <img className={style.img} src={image} alt="" />
+        <button className='view-button'>View Recipe</button>
       </Link>
-
-
     </div>
   )
 }
