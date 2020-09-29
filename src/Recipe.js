@@ -11,7 +11,7 @@ const Recipe = ({ label, image, id }) => {
 
     <div className='recipe'>
       <img className='img' src={image} alt="" />
-      <p>{label}</p>
+      <p className='label'>{label}</p>
       <Link to={`/${id}`}>
         <button className='view-button'>View Recipe</button>
       </Link>

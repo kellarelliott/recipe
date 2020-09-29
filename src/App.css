@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400&display=swap');
+
 html {
   background: url(./images/background.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -74,10 +76,16 @@ html {
   width: 100%;
 }
 
+.label {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 20px;
+}
+
 .view-button {
   border-radius: 15px;
   background-color: white;
   border: 2px solid grey;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 
 }
 
