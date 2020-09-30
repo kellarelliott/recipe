@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import history from './history';
 import Ingredients from './Ingredients';
 import Home from './Home';
 import Search from './Search';
@@ -8,6 +9,19 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
 const App = () => {
+
+  const [search, setSearch] = useState('');
+
+  const updateSearch = e => {
+    setSearch(e.target.value);
+  }
+
+  const getSearch = e => {
+    e.preventDefault();
+    history.push(`/search/${search}`);
+    setSearch('');
+    window.location.reload();
+  }
 
   return (
     <Router>

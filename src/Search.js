@@ -10,12 +10,11 @@ const Search = ({ match }) => {
   const [search, setSearch] = useState('')
   const [query, setQuery] = useState(match.params.thing)
 
+
   const getRecipes = async () => {
     const response = await fetch(`https://forkify-api.herokuapp.com/api/search?q=${query}`)
     const data = await response.json();
     setRecipes(data.recipes);
-    console.log(query);
-
   }
 
 
@@ -34,6 +33,7 @@ const Search = ({ match }) => {
     setQuery(search);
     setSearch('');
     history.push(`/search/${search}`)
+
   }
 
   const breakpointColumnsObj = {
@@ -45,7 +45,6 @@ const Search = ({ match }) => {
 
   return (
     <div className='Search'>
-
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
