@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css'
 import Recipe from './Recipe';
+import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
 import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons'
 
 const Search = ({ match }) => {
 
@@ -69,9 +72,14 @@ const Search = ({ match }) => {
   return (
     <div className='Search'>
       <nav className='search-nav'>
-        <form onSubmit={getSearch} className='search-form' >
-          <input className='search-bar' type='text' value={search} onChange={updateSearch} />
-          <button className='search-button' type='submit'>
+        <Link to='/' style={{ textDecoration: 'none' }}>
+          <div className='home-logo'>Just the Recipe
+          <span><FontAwesomeIcon icon={faUtensils} className='icon' /></span>
+          </div>
+        </Link>
+        <form onSubmit={getSearch} className='search-form-search'>
+          <input className='search-bar' type='text' value={search} onChange={updateSearch} style={{ border: 'solid', borderRight: 'none', borderWidth: 'thin' }} />
+          <button className='search-button' type='submit' style={{ border: 'solid', borderLeft: 'none', height: '32px', borderWidth: 'thin' }}>
             Search
             </button>
         </form>

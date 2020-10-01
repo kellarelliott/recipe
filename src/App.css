@@ -10,6 +10,7 @@ html {
   display: flex;
   flex-direction: column;
   width: 100%;
+
 }
 
 
@@ -57,13 +58,32 @@ a {
 }
 
 .Search {
-  width: 95%;
   align-self: center;
+  background-color: #706c61;
 }
 
-.search-form {
-  margin:auto;
+nav.search-nav {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  font-family: 'Staatliches', cursive;
+}
+
+.home-logo {
+  padding-left: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.search-form-home {
   width: 35%;
+  margin: auto;
+}
+.search-form-search {
+  width: 35%;
+  margin-left: 22% ;
 }
 
 .search-bar{
@@ -93,6 +113,7 @@ input.search-bar {
   display: flex;
   margin-left: -10px; /* gutter size offset */
   width: auto;
+  padding: 5px;
 }
 
 .my-masonry-grid_column {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import history from './history';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitterSquare, faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
 
@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <nav className='home-nav'>Just the Recipe</nav>
-      <form onSubmit={getSearch} className='search-form' >
+      <form onSubmit={getSearch} className='search-form-home' >
         <input className='search-bar' type='text' value={search} onChange={updateSearch} />
         <button className='search-button' type='submit'>
           Search
