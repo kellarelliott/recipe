@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 html {
-  background: url(./images/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   height: 100vh;
 }
 
@@ -17,20 +13,34 @@ html {
 }
 
 
-nav {
+nav.home-nav {
+  font-family: 'Staatliches', cursive;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
   width: 100%;
   height: 100px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  font-size: 100px;
 }
 
 .foot {
   height: 25%;
   width: 100%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+a {
+  color: black;
+}
+
+.icon {
+  padding: 4px;
 }
 
 .Home {
@@ -39,6 +49,11 @@ nav {
   align-items: center;
   width: 100%;
   height: 100vh;
+  background: url(./images/background1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .Search {
@@ -59,14 +74,17 @@ nav {
   height: 30px;
 }
 
+input.search-bar {
+  padding: 0;
+}
+
 .search-button {
   width: 13%;
-  height: 32px;
+  height: 30px;
   border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 0;
-  font-size: 10px;
 }
 
 .my-masonry-grid {
