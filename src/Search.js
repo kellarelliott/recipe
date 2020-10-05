@@ -56,8 +56,9 @@ const Search = ({ match }) => {
       })
       .catch(error => {
         setErrorMessage(error.toString());
-        history.push(`/error`);
+        history.push(`/errorcouldnotfind/${query}`);
         console.log('There was an error', error);
+        console.log(query)
       })
   }
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import history from './history';
-import Ingredients from './Ingredients';
 import Home from './Home';
 import Search from './Search';
 import ErrorPage from './ErrorPage';
@@ -30,7 +29,7 @@ const App = () => {
         <Switch>
           <Route path={"/"} exact component={Home} />
           <Route path={"/search/:thing"} exact component={Search} />
-          <Route path={"/error"} exact component={ErrorPage} />
+          <Route path={"/errorcouldnotfind/:otherthing"} exact component={ErrorPage} />
 
         </Switch>
       </div>

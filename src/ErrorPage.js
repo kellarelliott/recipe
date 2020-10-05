@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const ErrorPage = () =>  {
+const ErrorPage = ({ match }) => {
 
-return(
-  <h1> There's an error</h1>
-)
+  const [searchValue, setSearchValue] = useState(match.params.otherthing);
+
+  return (
+    <div className='ErrorPage'>
+      <h1> Could not find a recipe for {searchValue}</h1>
+    </div>
+
+  )
 
 };
 
