@@ -18,9 +18,11 @@ const Home = () => {
 
   const getSearch = e => {
     e.preventDefault();
-    history.push(`/search/${search}`);
-    setSearch('');
-    window.location.reload();
+    if (search !== '') {
+      history.push(`/search/${search}`);
+      setSearch('');
+      window.location.reload();
+    }
   }
 
 
@@ -29,7 +31,7 @@ const Home = () => {
       <nav className='home-nav'>Just the Recipe</nav>
       <form onSubmit={getSearch} className='search-form-home' >
         <input className='search-bar' type='text' value={search} onChange={updateSearch} />
-        <button className='search-button' type='submit'>
+        <button className='search-button' type='submit' style={{ border: 'transparent', transform: 'translateY(-2px)' }}>
           Search
         </button>
       </form>

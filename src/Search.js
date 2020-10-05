@@ -6,12 +6,15 @@ import Masonry from 'react-masonry-css';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons'
+import { render } from '@testing-library/react';
 
 const Search = ({ match }) => {
 
-  const [recipes, setRecipes] = useState([])
-  const [search, setSearch] = useState('')
-  const [query, setQuery] = useState(match.params.thing)
+  const [recipes, setRecipes] = useState([]);
+  const [search, setSearch] = useState('');
+  const [query, setQuery] = useState(match.params.thing);
+  const [errorMessage, setErrorMessage] = useState(null);
+
 
   const [locationKeys, setLocationKeys] = useState([])
   const history = useHistory()
@@ -39,9 +42,23 @@ const Search = ({ match }) => {
 
 
   const getRecipes = async () => {
-    const response = await fetch(`https://forkify-api.herokuapp.com/api/search?q=${query}`)
-    const data = await response.json();
-    setRecipes(data.recipes);
+
+    fetch(`https://forkify-api.herokuapp.com/api/search?q=${query}`)
+      .then(async response => {
+        const data = await response.json();
+        if (!response.ok) {
+          const error = (data && data.message) || response.statusText;
+          return Promise.reject(error);
+        }
+
+        setRecipes(data.recipes);
+
+      })
+      .catch(error => {
+        setErrorMessage(error.toString());
+        history.push(`/error`);
+        console.log('There was an error', error);
+      })
   }
 
 
@@ -51,14 +68,18 @@ const Search = ({ match }) => {
 
 
   const updateSearch = e => {
-    setSearch(e.target.value);
+    if (e.target.value !== '') {
+      setSearch(e.target.value);
+    }
   }
 
   const getSearch = e => {
     e.preventDefault();
-    setQuery(search);
-    setSearch('');
-    history.push(`/search/${search}`)
+    if (search !== '') {
+      setQuery(search);
+      setSearch('');
+      history.push(`/search/${search}`)
+    }
 
   }
 
@@ -70,6 +91,7 @@ const Search = ({ match }) => {
   };
 
   return (
+
     <div className='Search'>
       <nav className='search-nav'>
         <Link to='/' style={{ textDecoration: 'none' }}>
@@ -79,10 +101,11 @@ const Search = ({ match }) => {
         </Link>
         <form onSubmit={getSearch} className='search-form-search'>
           <input className='search-bar' type='text' value={search} onChange={updateSearch} style={{ border: 'solid', borderRight: 'none', borderWidth: 'thin' }} />
-          <button className='search-button' type='submit' style={{ border: 'solid', borderLeft: 'none', height: '32px', borderWidth: 'thin' }}>
+          <button className='search-button' type='submit' style={{ border: 'solid', borderLeft: 'none', height: '32px', borderWidth: 'thin', transform: 'translateY(-2px)' }}>
             Search
             </button>
         </form>
+
       </nav>
 
       <Masonry
@@ -90,16 +113,22 @@ const Search = ({ match }) => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
+
+
+
         {recipes.map(recipe => (
+
           <React.Fragment key={recipe.recipe_id}>
             <Recipe
               id={recipe.recipe_id}
               label={recipe.title}
               image={recipe.image_url}
+              url={recipe.source_url}
             />
           </React.Fragment>
         ))}
       </Masonry>
+      <footer style={{ height: '75px', backgroundColor: 'white' }}></footer>
 
     </div>
   )

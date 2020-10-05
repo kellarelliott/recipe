@@ -8,6 +8,8 @@ html {
 
 .App {
   display: flex;
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   flex-direction: column;
   width: 100%;
 
@@ -17,6 +19,8 @@ html {
 nav.home-nav {
   font-family: 'Staatliches', cursive;
   display: flex;
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   justify-content: center;
   align-items: center;
   background-color: white;
@@ -31,6 +35,8 @@ nav.home-nav {
   width: 100%;
   background-color: white;
   display: flex;
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
@@ -46,6 +52,8 @@ a {
 
 .Home {
   display: flex;
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -65,12 +73,16 @@ a {
 nav.search-nav {
   height: 60px;
   display: flex;
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   align-items: center;
   background-color: white;
   font-family: 'Staatliches', cursive;
 }
 
 .home-logo {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
   padding-left: 5px;
   font-size: 20px;
   display: flex;
@@ -101,9 +113,9 @@ input.search-bar {
 .search-button {
   width: 13%;
   height: 30px;
-  border: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
   padding: 0;
 }
 
@@ -137,12 +149,14 @@ input.search-bar {
 .label {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   font-size: 20px;
+
 }
 
 .view-button {
   border-radius: 15px;
   background-color: white;
-  border: 2px solid grey;
+  border: 2px solid black;
+  height: 25px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
 
 }
@@ -151,6 +165,13 @@ input.search-bar {
   cursor: pointer;
 }
 
+
+.Ingredients {
+  display: flex;
+  justify-content: center;
+  background-color: #706c61;
+  height:100vh;
+}
 
 .none {
   display: none;

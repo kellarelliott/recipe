@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const Recipe = ({ label, image, id }) => {
+const Recipe = ({ label, image, id, url }) => {
 
 
   return (
@@ -12,9 +12,9 @@ const Recipe = ({ label, image, id }) => {
     <div className='recipe'>
       <img className='img' src={image} alt="" />
       <p className='label'>{label}</p>
-      <Link to={`/${id}`}>
+      <a href={url}>
         <button className='view-button'>View Recipe</button>
-      </Link>
+      </a>
     </div>
   )
 }
