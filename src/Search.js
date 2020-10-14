@@ -102,7 +102,7 @@ const Search = ({ match }) => {
         </Link>
         <form onSubmit={getSearch} className='search-form-search'>
           <input className='search-bar' type='text' value={search} onChange={updateSearch} style={{ border: 'solid', borderRight: 'none', borderWidth: 'thin' }} />
-          <button className='search-button' type='submit' style={{ border: 'solid', borderLeft: 'none', height: '32px', borderWidth: 'thin', transform: 'translateY(-2px)' }}>
+          <button className='search-button' type='submit' style={{ border: 'solid', borderLeft: 'none', height: '32px', borderWidth: 'thin' }}>
             Search
             </button>
         </form>

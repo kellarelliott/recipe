@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400&display=swap');
+
 
 html {
   height: 100vh;
@@ -29,6 +30,8 @@ nav.home-nav {
   margin-bottom: 10px;
   font-size: 100px;
 }
+
+
 
 .foot {
   height: 25%;
@@ -89,6 +92,10 @@ nav.search-nav {
   align-items: center;
 }
 
+form{
+  display: flex;
+}
+
 .search-form-home {
   width: 35%;
   margin: auto;
@@ -111,12 +118,11 @@ input.search-bar {
 }
 
 .search-button {
-  width: 13%;
+
   height: 30px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  padding: 0;
 }
 
 .my-masonry-grid {
@@ -197,4 +203,10 @@ input.search-bar {
 
 .none {
   display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  nav.home-nav {
+    font-size: 50px;
+  }
 }

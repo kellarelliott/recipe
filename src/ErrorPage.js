@@ -28,7 +28,7 @@ const ErrorPage = ({ match }) => {
       <div className='errorText'>Unfortunately, we could not find a recipe for {displayed}. Please search for a different kind of recipe.</div>
       <form onSubmit={getSearch} className='search-form-home' >
         <input className='search-bar' type='text' value={searchValue} onChange={updateSearch} />
-        <button className='search-button' type='submit' style={{ border: 'transparent', transform: 'translateY(-1px)' }}>
+        <button className='search-button' type='submit' style={{ border: 'transparent', verticalAlign: 'middle' }}>
           Search
         </button>
       </form>

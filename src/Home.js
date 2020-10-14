@@ -31,7 +31,7 @@ const Home = () => {
       <nav className='home-nav'>Just the Recipe</nav>
       <form onSubmit={getSearch} className='search-form-home' >
         <input className='search-bar' type='text' value={search} onChange={updateSearch} />
-        <button className='search-button' type='submit' style={{ border: 'transparent', transform: 'translateY(-1px)' }}>
+        <button className='search-button' type='submit' style={{ border: 'transparent' }}>
           Search
         </button>
       </form>
